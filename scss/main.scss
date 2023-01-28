@@ -1,0 +1,287 @@
+@import './colors';
+@import './components';
+@import './mixins';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Bai Jamjuree', sans-serif;
+	height: 2000px;
+}
+
+p {
+	color: $Grayish-Blue;
+}
+
+h1,
+h2,
+h3 {
+	color: $Dark-Grayish-Blue;
+}
+
+img {
+	pointer-events: none;
+}
+
+.siemanko svg {
+	color: red;
+	font-size: 12rem;
+}
+.header {
+	position: relative;
+
+	.header__bg-image {
+		position: absolute;
+		background-image: url('../images/bg-header-mobile.png');
+		background-position: center;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	.header__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+
+		.header__logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.header__text {
+			margin: 5rem 3rem;
+			text-align: center;
+			max-width: 65rem;
+
+			&-title {
+				font-size: 3rem;
+				font-weight: 600;
+				padding-bottom: 2rem;
+			}
+
+			&-description {
+				font-size: 1.6rem;
+			}
+		}
+
+		.header__btns {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.snippets {
+	display: flex;
+	margin: 0 3rem;
+	text-align: center;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		&-title {
+			@include title-mobile;
+		}
+
+		&-description {
+			font-size: 1.6rem;
+			padding-bottom: 5rem;
+		}
+	}
+
+	&__content {
+		padding-bottom: 15rem;
+
+		&-img {
+			padding-bottom: 5rem;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&-list {
+			.snippet {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				h3 {
+					font-size: 2.2rem;
+					font-weight: 600;
+					padding-bottom: 1.5rem;
+				}
+
+				p {
+					font-size: 1.6rem;
+					padding-bottom: 5rem;
+					max-width: 40rem;
+				}
+			}
+		}
+	}
+}
+
+.access {
+	&__header {
+		@include flex-mobile;
+
+		&-title {
+			@include title-mobile;
+		}
+
+		&-description {
+			@include description-mobile;
+		}
+	}
+
+	&__img {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 10rem;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.workflow {
+	&__header {
+		@include flex-mobile;
+
+		&-title {
+			@include title-mobile;
+		}
+
+		&-description {
+			font-size: 1.6rem;
+			padding-bottom: 10rem;
+			max-width: 65rem;
+		}
+	}
+
+	&__content {
+		@include flex-mobile;
+
+		&-info {
+			&-img {
+				height: 4rem;
+			}
+
+			&-title {
+				margin-top: 4rem;
+				font-size: 2.2rem;
+				font-weight: 600;
+				padding-bottom: 1.5rem;
+			}
+
+			&-description {
+				font-size: 1.6rem;
+				padding-bottom: 5rem;
+				max-width: 40rem;
+			}
+		}
+	}
+}
+
+.partners {
+	padding-top: 10rem;
+
+	&__img {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex-wrap: wrap;
+
+		img {
+			max-width: 35%;
+			margin: 0 3rem;
+			padding-bottom: 5rem;
+		}
+	}
+}
+
+.download {
+	padding-top: 10rem;
+	&__header {
+		@include flex-mobile;
+
+		&-title {
+			@include title-mobile;
+		}
+
+		&-description {
+			@include description-mobile;
+		}
+
+		&-btns {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.footer {
+	margin-top: 10rem;
+
+	&__content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		&-logo {
+			margin-bottom: 3rem;
+			img {
+				width: 5rem;
+				height: 5rem;
+			}
+		}
+
+		&-links {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 3rem;
+			&-secound,
+			&-first {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				font-size: 1.6rem;
+
+				a {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+
+		a {
+			text-decoration: none;
+			color: $Dark-Grayish-Blue;
+		}
+
+		&-socials {
+			font-size: 3rem;
+		}
+	}
+}
+
+@import './tablets';
+@import './desktop';
